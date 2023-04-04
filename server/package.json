@@ -4,6 +4,7 @@
   "description": "back-end demo app for Apollo's lift-off course",
   "main": "src/index.js",
   "type":"module",
+  "vscode-graphql.useSchemaFileDefinitions": true,
   "scripts": {
     "start": "nodemon src/index"
   },

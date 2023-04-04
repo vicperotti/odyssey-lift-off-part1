@@ -9,18 +9,45 @@ export const typeDefs = gql`
     authors: [Author]
     author(id:ID!): Author!
   }
+
+  type Error {
+    message:String
+    path:String
+  }
+
+  type BaseResponse {
+    success:String
+    Errors:[Error]
+   }
+
   type Quote {
   id: ID!
   quotetext: String!
   author: Author!
   source: String
 }
+input AuthorInput {
+  name: String
+  img: String
+}
+
+input QuoteInput {
+  quotetext: String!
+  author: AuthorInput
+  source: String
+ }
+
 "Author of a complete Track or a Module"
 type Author {
   id: ID!
   name: String!
   photo: String
 }
+
+type Mutation {
+  addQuote(input: QuoteInput!): BaseResponse
+ }
+
 
 `;
 
