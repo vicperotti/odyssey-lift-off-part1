@@ -25,6 +25,8 @@ const Header = ({ children }) => {
             </HomeButton>
           </HomeLink>
         </HomeButtonContainer>
+        <div align="right"><Link to="/showAuthors">Manage Authors</Link></div>
+        
         {children}
       </Container>
     </HeaderBar>

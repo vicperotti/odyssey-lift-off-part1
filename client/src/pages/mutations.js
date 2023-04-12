@@ -4,7 +4,7 @@ export const ADD_QUOTE = gql`
   mutation ADD_QUOTE($input: QuoteInput!) {
     addQuote(input: $input) {
       success
-      errors {
+      Errors {
         message
       }
     }
@@ -14,10 +14,11 @@ export const ADD_QUOTE = gql`
 export const ADD_AUTHOR = gql`
   mutation ADD_AUTHOR($input: AuthorInput!) {
     addAuthor(input: $input) {
-      success
-      errors {
-        message
-      }
+    success
+    Errors {
+      path
+      message
     }
+  }
   }
 `;

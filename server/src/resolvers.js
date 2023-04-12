@@ -18,4 +18,34 @@ export const  resolvers = {
       return await Author.findAll({ include: Quote });
     },
   },
+  Mutation: {
+    addQuote: async (_, { input }) => {
+        await Quote.create({
+            ...input
+        });
+        return {
+            success: true,
+            Errors:null
+        };
+        
+    },
+    addAuthor: async (_, { input }) => {
+      await Author.create({
+          ...input
+      });
+      return {
+          success: true,
+          Errors:null
+      };
+  },
+//   addQuoteAndAuthor: async (_, { input }) => {
+//     await Author.create({
+//         ...input
+//     });
+//     return {
+//         success: true,
+//         Errors:null
+//     };
+// },
+}
 };

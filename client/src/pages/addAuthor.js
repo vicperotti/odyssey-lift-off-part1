@@ -12,7 +12,6 @@ export const AddAuthor = () => {
     const [authorInput, setAuthorInput] = useState({ name: "", photo: "" })
 
     const [addAuthor, result] = useMutation(ADD_AUTHOR, {
-        refetchQueries: ["GET_QUOTES"],
         variables: {
             input: {
                 ...authorInput

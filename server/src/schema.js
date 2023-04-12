@@ -28,7 +28,7 @@ export const typeDefs = gql`
 }
 input AuthorInput {
   name: String
-  img: String
+  photo: String
 }
 
 input QuoteInput {
@@ -46,6 +46,7 @@ type Author {
 
 type Mutation {
   addQuote(input: QuoteInput!): BaseResponse
+  addAuthor(input: AuthorInput!): BaseResponse
  }
 
 
